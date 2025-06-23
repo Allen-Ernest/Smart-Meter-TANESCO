@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaction Receipt</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; padding: 2rem; }
+        .receipt { border: 1px solid #ccc; padding: 2rem; max-width: 400px; margin: auto; }
+    </style>
+</head>
+<body>
+<div class="receipt">
+    <h2>Power Purchase Receipt</h2>
+    <hr/>
+    <p><strong>Token:</strong> <span th:text="${tx.token}"></span></p>
+    <p><strong>Date:</strong> <span th:text="${tx.date}"></span></p>
+    <p><strong>Amount:</strong> TZS <span th:text="${tx.amount}"></span></p>
+    <p><strong>Units Purchased:</strong> <span th:text="${tx.unitsPurchased}"></span> kWh</p>
+    <hr/>
+    <p>Thank you for using TANESCO Smart Meter Portal.</p>
+    <button onclick="window.print()">Print</button>
+</div>
+</body>
+</html>

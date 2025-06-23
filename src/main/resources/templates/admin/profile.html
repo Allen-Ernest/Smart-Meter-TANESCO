@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin Profile | TANESCO Smart Meter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+<div class="bg-white rounded-xl shadow-lg w-full max-w-2xl p-8">
+    <h1 class="text-2xl font-bold text-yellow-600 mb-4">Admin Profile</h1>
+
+    <div class="space-y-4">
+        <div>
+            <label class="block text-sm text-gray-600">Full Name</label>
+            <p class="font-semibold text-lg text-gray-800" th:text="${admin.firstName + ' ' + admin.lastName}">Admin Name</p>
+        </div>
+
+        <div>
+            <label class="block text-sm text-gray-600">Email Address</label>
+            <p class="text-gray-700" th:text="${admin.email}">admin@example.com</p>
+        </div>
+
+        <div>
+            <label class="block text-sm text-gray-600">Station</label>
+            <p class="text-gray-700" th:text="${admin.station}">Headquarters</p>
+        </div>
+    </div>
+
+    <div class="mt-6 flex justify-between">
+        <a href="/admin_dashboard" class="text-yellow-600 hover:underline">← Back to Dashboard</a>
+        <form th:action="@{/admin_logout}" method="post">
+            <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md">Logout</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
